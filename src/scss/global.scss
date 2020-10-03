@@ -1,0 +1,46 @@
+@import 'mixins';
+@import 'colours';
+@import 'typography';
+@import 'theme';
+
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+}
+#app {
+  display: flex; 
+  flex-direction: column;
+  height: 100vh; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#content {
+  //Rudimentary responsive styles
+  //iPhone 6
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    max-width: 667px;
+  }
+  //iPad 9.7"
+  @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      min-width: 768px;
+      max-width: 1024px;
+  }
+  //Desktop 
+  @media only screen 
+    and (min-device-width: 1024.5px) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+      max-width: 1024px;
+  }
+  margin: 0 auto;
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}

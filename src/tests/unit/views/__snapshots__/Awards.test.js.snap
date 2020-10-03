@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `undefined`;
+
+exports[`Awards view Snapshot 1`] = `
+<div class="md-layout">
+  <div class="md-layout-item">
+    <h2>Science Fiction Literary Awards</h2>
+    <div id="award-category-selector">
+      <md-button-stub class="md-raised md-primary selector">Hugo Award for Best Novel</md-button-stub>
+      <md-button-stub class="md-raised md-primary selector">Nebula Award for Best Novel</md-button-stub>
+    </div>
+  </div>
+  <div class="md-layout-item">
+    <app-award-table-stub who="" what="" selectedaward=""></app-award-table-stub>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+#app {
+    font-family: Roboto, sans-serif;
+    color: $oil;
+}
+h1, h2, h3 {
+    font-weight: 500;
+    line-height: 1.25;
+}
+p, td, th, li {
+    font-weight: 200
+}
+blockquote {
+    p {
+        font-family: 'Special Elite', cursive;
+    }
+}
+a { 
+   // text-decoration: none;
+}
