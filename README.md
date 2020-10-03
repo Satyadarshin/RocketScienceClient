@@ -1,1 +1,1 @@
-# RocketScinceClient
+# RocketScienceClient
