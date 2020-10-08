@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `undefined`;
-
 exports[`Texts view Snapshot 1`] = `
 <div class="content">
   <h2>Texts</h2>
