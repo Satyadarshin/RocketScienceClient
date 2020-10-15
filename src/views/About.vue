@@ -1,11 +1,11 @@
 <template>
-  <div class="md-layout">
+  <div class="md-layout md-gutter">
     <div class="md-layout-item">
       <h2>About the Rocket Science project</h2>
       <app-figure 
-        uri="/assets/illustrations/Asimov_Foundation_trilogy_Chris_Foss_art.png" 
+        illustration="Chris_Foss" 
         altText="Asimov's Foundation trilogy, cover art by Chris Foss" 
-        caption="Issac Asimov's Foundation trilogy with cover art by Chris Foss" 
+        caption="Artwork by Chris Foss" 
       />
     </div>
     <div class="md-layout-item">

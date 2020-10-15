@@ -16,6 +16,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 #content {
+  padding: 0 2rem;
   //Rudimentary responsive styles
   //iPhone 6
   @media only screen 
@@ -42,5 +43,6 @@ html, body {
   flex: 1 0 auto;
 }
 footer {
+  padding: 0 2rem;
   flex-shrink: 0;
 }
