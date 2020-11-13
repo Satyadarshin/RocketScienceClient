@@ -1,15 +1,15 @@
 <template>
-  <div class="md-layout md-gutter">
+  <div class="md-layout md-gutter page">
     <div class="md-layout-item">
       <h2>About the Rocket Science project</h2>
-      <app-figure 
-        illustration="Chris_Foss" 
-        altText="Asimov's Foundation trilogy, cover art by Chris Foss" 
-        caption="Artwork by Chris Foss" 
+      <app-figure
+        illustration="Chris_Foss"
+        altText="Asimov's Foundation trilogy, cover art by Chris Foss"
+        caption="Artwork by Chris Foss"
       />
     </div>
     <div class="md-layout-item">
-      <p>This is a resource for people interested in SF as a genre of literature.</p>    
+      <p>This is a resource for people interested in SF as a genre of literature.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis a neque, autem ab unde tempora maiores id asperiores laborum aut provident facere nobis ipsum molestias.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus tempora nobis debitis placeat molestias nulla corrupti, autem ipsum nostrum dolor omnis voluptatibus optio illum! Facere corporis esse molestiae laboriosam.</p>
       <h3>sub heading</h3>
@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import Figure from '@/components/Figure'
+import Figure from '@/components/Figure';
 
 export default {
   components: {
-    appFigure: Figure
-  }
-}
+    appFigure: Figure,
+  },
+};
 
 </script>

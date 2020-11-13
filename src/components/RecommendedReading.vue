@@ -1,63 +1,72 @@
 <template>
-    <div>
-        <h3>Recommended Reading!</h3>
-        <div id="recommended">
-<div v-for="novel in recommended"><img src="/assets/publications/{{novel}}.jpg" alt=""></div>
-            <!-- <div><img src="/assets/publications/Flowers-For-Algernon_Daniel-Keyes.jpg" alt=""></div>
-            <div><img src="/assets/publications/The-Three-Body-Problem_Liu-Cixin.jpg" alt=""></div>
-            <div><img src="/assets/publications/The-Dispossessed_Ursula-K-Le-Guin.jpg" alt=""> </div>
-            <div><img src="/assets/publications/Dune_Frank-Herbert.jpg" alt=""></div>
-            <div><img src="/assets/publications/The-Handmaids-Tale_Margaret-Attwood.png" alt=""></div>
-            <div><img src="/assets/publications/The-Man-In-The-High-Castle_Phillip-K-Dick.jpg" alt=""></div>
-            <div><img src="/assets/publications/The-Stars-My-Destination_Alfred-Bester.jpg" alt=""></div>
-            <div><img src="/assets/publications/The-Forever-War_Joe-Haldeman.jpg" alt=""></div>
-            <div><img s-For-Algernon_Daniel-Keyes',
-            'The-Three-Body-Problem_Liu-Cixin',
-            'The-Dispossessed_Ursula-K-Le-Guin',
-            'Dune_Frank-Herbert',
-            'The-Handmaids-Tale_Margaret-Attwood',
-            'The-Man-In-The-High-Castle_Phillip-K-Dick',
-            'The-Stars-My-Destination_Alfred-Bester',
-            'The-Forever-War_Joe-Haldeman',
-            'Neuromancer_William-Gibson',
-            'Babel-17_Samuel-R-Delaney',
-            'The-Chrysalids_John-Wyndham',
-            'Foundation_Isaac-Asimov',
-            'Spin_Robert-Charles-Wilson',
-            'Ancilliary-Justice_Ann-Leckie',
-            'Brave-New-World_Aldous-Huxley']
-    }
-  }
- }
+  <div>
+    <h3>Recommended Reading</h3>
+    <div id="recommended" ref="reading">
+      <div v-for="(novel, index)  in recommended" :key="index" >
+        <img :src="`/assets/publications/${novel}.jpg`" alt="" />
+      </div>
+    </div>
+  </div>
+ </template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstTile: '',
+      recommended: [
+        'Flowers-For-Algernon_Daniel-Keyes',
+        'The-Three-Body-Problem_Liu-Cixin',
+        'The-Dispossessed_Ursula-K-Le-Guin',
+        'Dune_Frank-Herbert',
+        'The-Handmaids-Tale_Margaret-Attwood',
+        'The-Man-In-The-High-Castle_Phillip-K-Dick',
+        'The-Stars-My-Destination_Alfred-Bester',
+        'The-Forever-War_Joe-Haldeman',
+        'Neuromancer_William-Gibson',
+        'Babel-17_Samuel-R-Delaney',
+        'The-Chrysalids_John-Wyndham',
+        'Foundation_Isaac-Asimov',
+        'Spin_Robert-Charles-Wilson',
+        'Ancilliary-Justice_Ann-Leckie',
+        'Brave-New-World_Aldous-Huxley',
+      ],
+    };
+  },
+  mounted() {
+    this.$nextTick(() => console.log(this.$refs.reading.firstChild));
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  /* https://css-tricks.com/seamless-responsive-photo-grid/ */
+/* https://css-tricks.com/seamless-responsive-photo-grid/ */
+
 div {
   background-color: silver;
   h3 {
-    margin: 1rem; 
+    margin: 1rem;
     padding-top: 1rem;
   }
   #recommended {
     line-height: 0;
-    border-left: 1px solid white; 
-    border-top: 1px solid white;      
+    border-left: 1px solid white;
+    border-top: 1px solid white;
     -webkit-column-count: 5;
     -webkit-column-gap:   0px;
     -moz-column-count:    5;
     -moz-column-gap:      0px;
     column-count:         5;
-    column-gap:           0px;  
-    div { 
+    column-gap:           0px;
+    div {
       background-color: black; opacity: .4;
-      border-bottom: 1px solid white;      
-      border-right: 1px solid white; 
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
       transition: opacity 1s ease-out;
       &:hover {
         opacity: 1;
-      }     
-      img {  
+      }
+      img {
         width: 100% !important;
         // height: auto !important;
       }
