@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Recommended Reading</h3>
+        <h3>Recommended Reading!</h3>
         <div id="recommended">
 <div v-for="novel in recommended"><img src="/assets/publications/{{novel}}.jpg" alt=""></div>
             <!-- <div><img src="/assets/publications/Flowers-For-Algernon_Daniel-Keyes.jpg" alt=""></div>
