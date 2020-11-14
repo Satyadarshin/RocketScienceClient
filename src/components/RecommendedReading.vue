@@ -2,18 +2,20 @@
   <div>
     <h3>Recommended Reading</h3>
     <div id="recommended" ref="reading">
-      <div v-for="(novel, index)  in recommended" :key="index" >
+      <div v-for="(novel, index)  in recommended" :key="index" :style="calculateHeightRatio">
         <img :src="`/assets/publications/${novel}.jpg`" alt="" />
       </div>
     </div>
   </div>
- </template>
+</template>
 
 <script>
+import { flexboxWidth } from '@/components/appMixins.js'
 export default {
+  mixins: [ flexboxWidth ],
   data() {
     return {
-      firstTile: '',
+      threeToFour: '',
       recommended: [
         'Flowers-For-Algernon_Daniel-Keyes',
         'The-Three-Body-Problem_Liu-Cixin',
@@ -30,11 +32,26 @@ export default {
         'Spin_Robert-Charles-Wilson',
         'Ancilliary-Justice_Ann-Leckie',
         'Brave-New-World_Aldous-Huxley',
-      ],
+      ], 
     };
   },
+  computed: {
+    calculateHeightRatio() {
+      return {
+        height: `${this.threeToFour}px`
+      }
+    }
+  },
   mounted() {
-    this.$nextTick(() => console.log(this.$refs.reading.firstChild));
+    this.$ready(
+      () => {
+        this.$nextTick( () => {
+          const firstTile = this.$refs.reading.firstChild.clientWidth
+          const aThird = firstTile / 3
+          this.threeToFour = aThird * 4
+        });
+      }
+    )
   },
 };
 </script>
@@ -59,6 +76,7 @@ div {
     column-count:         5;
     column-gap:           0px;
     div {
+      overflow: hidden;
       background-color: black; opacity: .4;
       border-bottom: 1px solid white;
       border-right: 1px solid white;
@@ -67,8 +85,9 @@ div {
         opacity: 1;
       }
       img {
-        width: 100% !important;
-        // height: auto !important;
+        height: 100%;
+  width: 100%;
+        object-fit: cover;
       }
     }
   }

@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 #recent-reading {
-    width: 1000px;
+    // width: 1000px;
     height: 25rem;
     padding: .5rem 1rem;
     h3 { 
