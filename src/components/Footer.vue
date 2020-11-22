@@ -1,5 +1,5 @@
 <template>
-    <footer class="md-layout md-gutter">
+    <footer class="md-layout">
         <div class="md-layout-item">
             <p>&copy; 2020 Satyadarshin Perry // <a href="https://www.satyadarshin.com">Portfolio site</a></p>
         </div>
@@ -10,12 +10,15 @@
             <md-button class="md-icon-button md-raised">
                 <a href="/authors"><md-icon>person</md-icon></a>
             </md-button>
+            <!-- 
+            These links have been redacted from public display.
+            There's insufficient content for production viewing.
             <md-button class="md-icon-button md-raised">
                 <a href="/texts"><md-icon>book</md-icon></a>
             </md-button>
             <md-button class="md-icon-button md-raised">
                 <a href="/awards"><md-icon>star_rate</md-icon></a>
-            </md-button>
+            </md-button> -->
         </div>
     </footer>
 </template>

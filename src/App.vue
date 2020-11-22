@@ -5,8 +5,8 @@
       <md-tab id="tab-about" md-label="About" to="/about"></md-tab>
       <md-tab id="tab-authors" md-label="Authors" to="/authors"></md-tab>
       <!--
-        These links have been redacted from public display.
-        There's insufficientt content for production viewing.
+      These links have been redacted from public display.
+      There's insufficient content for production viewing.
       <md-tab id="tab-texts" md-label="Texts" to="/texts"></md-tab>
       <md-tab id="tab-awards" md-label="Awards" to="/awards"></md-tab> 
       -->
@@ -45,6 +45,10 @@ export default {
       color: #42b983;
     }
   }
+}
+#content {
+  // This fixes the footer to the bottom, regardless of content height.
+  min-height: calc(100vh - 10rem);
 }
 
 .page {

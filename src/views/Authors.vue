@@ -1,18 +1,14 @@
 <template>
-  <div id="authors">
-    <md-app-content>
+  <div id="authors" class="page">
     <h2>Science Fiction authors</h2>
     <p>This is a reference for SF authors of <em>significance</em>, that is an author that has either won or been nominated for a literary award for a text that is recgnised as Science Fiction.</p>
-    <div class="md-layout md-gutter">
-      <div class="md-layout-item">
+    <div class="author_table"> 
         <app-author-table :authorList="authors"></app-author-table>
       </div>
-      <div class="md-layout-item">
+      <div class="author_spotlight">
         <router-view/>
       </div>
     </div>
-    </md-app-content>
-  </div>
 </template>
 
 <script>
@@ -44,3 +40,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#authors {
+  @include base-grid-structure;
+  grid-template-areas:
+    "title table table table spotlight spotlight";
+  h2 {
+    grid-area: title;
+  }
+  .author_table {
+    grid-area: table
+  }
+  .author_spotlight {
+    grid-area: spotlight;
+  }
+}
+</style>

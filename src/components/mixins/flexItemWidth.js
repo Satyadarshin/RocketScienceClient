@@ -1,4 +1,4 @@
-export const flexboxWidth = {
+export const flexItemWidth = {
   // See https://github.com/vuejs/Discussion/issues/394
   // After component load, this mixin makes the width of a flex item div available.
   methods: {
@@ -9,6 +9,6 @@ export const flexboxWidth = {
       setTimeout(() => {
         this.$nextTick(fn);
       });
-    }
-  }
-}
+    },
+  },
+};

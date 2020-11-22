@@ -7,13 +7,14 @@
                     <span><router-link :to="'/authors/Keith_Roberts'">Keith Roberts</router-link></span>
                     <br>
                     <cite>Pavane</cite>
+                    <br>
+                    <span>1968</span>
                 </p>
                 <div class="precis">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, in?</p>
-                    <p> Maecenas tempor erat quis commodo sollicitudin. Sed convallis eu ipsum at fermentum. Nunc eget nisl vitae quam pellentesque tristique. Integer hendrerit consectetur mi vitae tincidunt. Etiam quis aliquet magna. Integer tincidunt justo quis scelerisque lobortis. Morbi a rutrum mi. Donec elit diam, auctor sit amet eleifend non, vestibulum at nibh.</p>
-                    <p>Nam fermentum bibendum elementum. Nunc mi justo, suscipit viverra dui id, eleifend laoreet felis. Aliquam imperdiet viverra faucibus. Nulla nec feugiat justo. Nam ut finibus quam. Suspendisse potenti. Ut mauris tellus, tempor eu enim eget, elementum tempor dui. Nullam bibendum, mi malesuada hendrerit commodo, magna ex semper nulla, malesuada tincidunt turpis sem sed sapien. Curabitur pellentesque efficitur eros in faucibus. Nam suscipit erat eget urna tempus, ac condimentum libero feugiat. Fusce fringilla, felis id suscipit elementum, ligula lorem fringilla metus, eget convallis enim turpis in urna. Quisque accumsan justo ut semper rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Maecenas tempor erat quis commodo sollicitudin. Sed convallis eu ipsum at fermentum. Nunc eget nisl vitae quam pellentesque tristique. Integer hendrerit consectetur mi vitae tincidunt. Etiam quis aliquet magna. Integer tincidunt justo quis scelerisque lobortis. Morbi a rutrum mi. Donec elit diam, auctor sit amet eleifend non, vestibulum at nibh.</p>
                 </div>
-                <div class= "bookcover">    
+                <div class= "bookcover">
                     <img  src="/assets/publications/Pavane_Keith-Roberts.jpg" alt="" />
                 </div>
             </div>
@@ -24,24 +25,23 @@
 <script>
 export default {
 
-}
+};
 
 </script>
 
 <style lang="scss" scoped>
 #recent-reading {
-    // width: 1000px;
     height: 25rem;
-    padding: .5rem 1rem;
-    h3 { 
+    background-color:$lightgrey;
+    h3 {
         padding: .5rem 0;
         margin: .5rem;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $white;
     }
     .panel {
         height: 22.75rem;
-        background-color: lightgray;
-        .reading_history { 
+        
+        .reading_history {
             display: flex;
             align-items: flex-start;;
             justify-content: space-between;
@@ -54,10 +54,11 @@ export default {
             }
             .precis {
                 // flex-grow: 2
+                margin: 0 1rem;
                 width: 60%;
             }
-            .bookcover { 
-                img { 
+            .bookcover {
+                img {
                     margin: 0 auto;
                     flex-grow: 1;
                     display: block;

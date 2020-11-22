@@ -1,6 +1,6 @@
 <template>
     <div>
-        <md-table>
+        <md-table class="md-elevation-2">
             <md-table-toolbar>
                 <div class="md-toolbar-section-start">
                     <div class="md-layout-item">

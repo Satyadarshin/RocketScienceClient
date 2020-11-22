@@ -1,0 +1,7 @@
+@mixin base-grid-structure {
+    display: grid;
+    grid-template-columns: [start] 1fr [first] 1fr [second] 2fr [third] 1fr [fifth] 1fr [end];
+    grid-template-rows: [top] auto [row-first] auto [row-second] auto [bottom];
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+}

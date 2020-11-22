@@ -2,56 +2,61 @@
   <div>
     <h3>Recommended Reading</h3>
     <div id="recommended" ref="reading">
-      <div v-for="(novel, index)  in recommended" :key="index" :style="calculateHeightRatio">
-        <img :src="`/assets/publications/${novel}.jpg`" alt="" />
+      <div v-for="(novel, index)  in recommendedReading" :key="index" :style="calculateHeightRatio" @click="toggleModal(index)"  >
+        <img :src="`/assets/publications/${novel}.jpg`" :alt="index" />
       </div>
     </div>
+    <app-recommended-modal v-if="showModal" @close="showModal = false" :focus="moreInfo">
+      <template v-slot:body></template>
+    </app-recommended-modal>
   </div>
 </template>
 
 <script>
-import { flexboxWidth } from '@/components/appMixins.js'
+import { flexItemWidth } from '@/components/mixins/flexItemWidth';
+import RecommendedReadingModal from '@/components/RecommendedReadingModal';
+
 export default {
-  mixins: [ flexboxWidth ],
+  mixins: [flexItemWidth],
+  components: {
+    appRecommendedModal: RecommendedReadingModal,
+  },
   data() {
     return {
       threeToFour: '',
-      recommended: [
-        'Flowers-For-Algernon_Daniel-Keyes',
-        'The-Three-Body-Problem_Liu-Cixin',
-        'The-Dispossessed_Ursula-K-Le-Guin',
-        'Dune_Frank-Herbert',
-        'The-Handmaids-Tale_Margaret-Attwood',
-        'The-Man-In-The-High-Castle_Phillip-K-Dick',
-        'The-Stars-My-Destination_Alfred-Bester',
-        'The-Forever-War_Joe-Haldeman',
-        'Neuromancer_William-Gibson',
-        'Babel-17_Samuel-R-Delaney',
-        'The-Chrysalids_John-Wyndham',
-        'Foundation_Isaac-Asimov',
-        'Spin_Robert-Charles-Wilson',
-        'Ancilliary-Justice_Ann-Leckie',
-        'Brave-New-World_Aldous-Huxley',
-      ], 
+      moreInfo: '',
+      recommendedReading: [],
+      showModal: false,
     };
+  },
+  methods: {
+    toggleModal(text) {
+      this.showModal = !this.showModal;
+      this.moreInfo = text;
+    },
   },
   computed: {
     calculateHeightRatio() {
       return {
-        height: `${this.threeToFour}px`
-      }
-    }
+        height: `${this.threeToFour}px`,
+      };
+    },
   },
   mounted() {
+    // State needs to be pulled in at the mounted hook, not in a computed property.
+    // If not done this way, the $nextTick has nowhere to go.
+    this.recommendedReading = this.$store.getters.readingList;
+    // Gets the width of a flex item after the items have been rendered.
+    // Proportionally calculates the height of the item(s) at 2:3
     this.$ready(
       () => {
-        this.$nextTick( () => {
-          const firstTile = this.$refs.reading.firstChild.clientWidth
-          const aThird = firstTile / 3
-          this.threeToFour = aThird * 4
+        this.$nextTick(() => {
+          const firstTile = this.$refs.reading.firstChild.clientWidth;
+          const aThird = firstTile / 2;
+          this.threeToFour = aThird * 3;
         });
-      }
-    )
+      },
+    );
   },
 };
 </script>
@@ -60,7 +65,7 @@ export default {
 /* https://css-tricks.com/seamless-responsive-photo-grid/ */
 
 div {
-  background-color: silver;
+  background-color: $lightgrey;
   h3 {
     margin: 1rem;
     padding-top: 1rem;
@@ -77,16 +82,16 @@ div {
     column-gap:           0px;
     div {
       overflow: hidden;
-      background-color: black; opacity: .4;
+      background-color: black; opacity: 1;
       border-bottom: 1px solid white;
       border-right: 1px solid white;
       transition: opacity 1s ease-out;
       &:hover {
-        opacity: 1;
+        opacity: .4;
       }
       img {
         height: 100%;
-  width: 100%;
+        width: 100%;
         object-fit: cover;
       }
     }

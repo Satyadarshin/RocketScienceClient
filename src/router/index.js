@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import FrontPage from '../views/FrontPage.vue';
 import About from '../views/About.vue';
 import Authors from '../views/Authors.vue';
 import Awards from '../views/Awards.vue';
@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: FrontPage,
   },
   {
     path: '/about',

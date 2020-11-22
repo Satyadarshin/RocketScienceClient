@@ -1,20 +1,18 @@
 <template>
-<div class="md-elevation-2 picture-canvas">
-    <picture>
-        <div>
-
-        <img :src="'/assets/illustrations/' + illustration +'-medium.jpg'" 
-            :srcset="
-                '/assets/illustrations/' + illustration +'-large.jpg 1500w, ' +
-                '/assets/illustrations/' + illustration +'-medium.jpg 1000w,' +
-                '/assets/illustrations/' + illustration +'-small.jpg 500w'
-            "
-            :alt="altText" 
-            />
-        </div>
-        <p class="picture_caption">{{caption}}</p>
-    </picture>
-</div>
+    <div class="md-elevation-2 picture_canvas" :class="classes">
+        <picture>
+            <div class="picture_frame">
+            <img :src="'/assets/illustrations/' + illustration +'-medium.jpg'" 
+                :srcset="
+                    '/assets/illustrations/' + illustration +'-large.jpg 1500w, ' +
+                    '/assets/illustrations/' + illustration +'-medium.jpg 1000w,' +
+                    '/assets/illustrations/' + illustration +'-small.jpg 500w'
+                "
+                :alt="altText" />
+            </div>
+            <p class="picture_caption">{{caption}}</p>
+        </picture>
+    </div>
 </template>
 
 <script>
@@ -22,13 +20,14 @@ export default {
     props: {
         illustration: String,
         altText: String,
-        caption: String
+        caption: String,
+        classes: String
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.picture-canvas {
+.picture_canvas {
     border-radius: 0 0 5px 5px;
     picture {
         padding: 0 .5rem;
