@@ -16,6 +16,10 @@
 import { flexItemWidth } from '@/components/mixins/flexItemWidth';
 import RecommendedReadingModal from '@/components/RecommendedReadingModal';
 
+/*
+* Set a watcher on this in case the page is resized
+*/
+
 export default {
   mixins: [flexItemWidth],
   components: {
