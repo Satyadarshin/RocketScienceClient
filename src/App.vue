@@ -8,7 +8,7 @@
       These links have been redacted from public display.
       There's insufficient content for production viewing.
       <md-tab id="tab-texts" md-label="Texts" to="/texts"></md-tab>
-      <md-tab id="tab-awards" md-label="Awards" to="/awards"></md-tab> 
+      <md-tab id="tab-awards" md-label="Awards" to="/awards"></md-tab>
       -->
     </md-tabs>
     <main id="content">
@@ -21,14 +21,14 @@
 </template>
 
 <script>
-import footer from '@/components/Footer.vue'
+import footer from '@/components/Footer.vue';
 
 export default {
   name: 'app',
   components: {
-    appFooter: footer
-  }
-}
+    appFooter: footer,
+  },
+};
 </script>
 
 <style lang="scss">
@@ -36,7 +36,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Material+Icons");
 #nav {
   padding: 30px;
-  a { 
+  a {
     text-decoration: none;
     font-weight: bold;
     color: #2c3e50;
@@ -47,12 +47,9 @@ export default {
   }
 }
 #content {
+  padding-bottom: 2rem;
   // This fixes the footer to the bottom, regardless of content height.
-  min-height: calc(100vh - 10rem);
-}
-
-.page {
-  width: inherit;
+ // min-height: calc(100vh - 10rem);
 }
 .router-animation-enter-active {
   animation: coming 1s;
